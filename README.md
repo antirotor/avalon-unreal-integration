@@ -6,4 +6,4 @@ This is basically workaround - Unreal cannot create main menu through its Python
 
 ## How does this work
 
-Plugin is creating basic menu items in **Window/Avalon** section  of Unreal Editor main menu. Clicking on those menu items is calling callbacks that are declared in c++ but needs to be implemented during Unreal Editor startup in `init_unreal.py`.
+Plugin is creating basic menu items in **Window/Avalon** section  of Unreal Editor main menu. Clicking on those menu items is calling callbacks that are declared in c++ but needs to be implemented during Unreal Editor startup in `Plugins/Avalon/Content/Python/init_unreal.py` - this should be executed by Unreal Editor automatically.
