@@ -2,13 +2,14 @@ import unreal
 
 avalon_detected = True
 try:
+    from avalon import api
     from avalon import unreal as avalon_unreal
-except ImportError:
+except ImportError as exc:
     avalon_detected = False
-    unreal.log_error("Avalon: was not found in Python environment.")
+    unreal.log_error("Avalon: cannot load avalon [ {} ]".format(exc))
 
 if avalon_detected:
-    avalon_unreal.install()
+    api.install(avalon_unreal)
 
 
 @unreal.uclass()

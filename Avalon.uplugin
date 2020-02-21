@@ -12,13 +12,13 @@
 	"SupportURL": "",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
-	"IsExperimentalVersion": true,
+	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [
-    {
-      "Name": "Avalon",
-      "Type": "Editor",
-      "LoadingPhase": "Default"
-    }
+		{
+			"Name": "Avalon",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
 	]
 }
