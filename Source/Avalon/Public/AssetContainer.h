@@ -4,15 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/DataAsset.h"
-#include "UObject/UObjectGlobals.h"
+#include "Engine/AssetUserData.h"
+#include "AssetData.h"
 #include "AssetContainer.generated.h"
 
 /**
  * 
  */
 UCLASS(Blueprintable)
-class AVALON_API UAssetContainer : public UDataAsset
+class AVALON_API UAssetContainer : public UAssetUserData
 {
 	GENERATED_BODY()
 	
@@ -21,10 +21,14 @@ public:
 	UAssetContainer(const FObjectInitializer& ObjectInitalizer);
 	// ~UAssetContainer();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		TArray<FString> assets;
-		
-	
+
+	// There seems to be no reflection option to expose array of FAssetData
+	/*
+	UPROPERTY(Transient, BlueprintReadOnly, Category = "Python", meta=(DisplayName="Assets Data"))
+		TArray<FAssetData> assetsData;
+	*/
 private:
 	TArray<FAssetData> assetsData;
 	void OnAssetAdded(const FAssetData& AssetData);

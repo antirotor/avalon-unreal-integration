@@ -21,6 +21,7 @@ void FAvalonModule::StartupModule()
 		FMenuExtensionDelegate::CreateRaw(this, &FAvalonModule::AddMenuEntry)
 	);
 	LevelEditorModule.GetMenuExtensibilityManager()->AddExtender(MenuExtender);
+	
 }
 
 void FAvalonModule::ShutdownModule()
